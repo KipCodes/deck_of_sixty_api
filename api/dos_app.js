@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const ServerlessHttp = require('serverless-http');
 const app = express();
 app.use(cors());
 
@@ -426,7 +427,7 @@ app.get('/api/cards', (req, res) =>  {
 });
 
 module.exports = app;
-module.exports.handler = serverless(app);
+module.exports.handler = ServerlessHttp(app);
 
 //For testing locally
 app.listen(3000, () => {
