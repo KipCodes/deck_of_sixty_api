@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 
-// Define a simple route to return a JSON object
-app.get('/api/data', (req, res) => {
-    const jsonData = {
+export default function handler(req, res) {
+  if (req.method === 'GET') {
+
+    const cards = [
+      {
         name: "Deck of Sixty",
         version: "1.0",
         "deck": {
@@ -419,11 +420,10 @@ app.get('/api/data', (req, res) => {
               },
             ]
         }
-    };
-    res.json(jsonData);
-});
-
-// Start the server
-app.listen(port, () => {
-    console.log(`API is running on http://localhost:${port}`);
-});
+    }];
+    res.status(200).json({cards});
+  } else {
+    res.setHeader('Allow', ['GET']);
+    res.status(405).end(`Method ${req.method} Not Allowed`)
+  };
+}
