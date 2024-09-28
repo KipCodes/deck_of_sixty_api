@@ -1,10 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
 app.use(cors());
 
-    const cards = [
+const cards = [
       {
         name: "Deck of Sixty",
         version: "1.0",
@@ -420,11 +419,16 @@ app.use(cors());
               },
             ]
         }
-    }];
+}];
+
 app.get('/api/cards', (req, res) =>  {
   res.json({ cards });
 });
 
+module.exports = app;
+module.exports.handler = serverless(app);
+
+//For testing locally
 app.listen(3000, () => {
   console.log(`API running on http://localhost:3000`);
 })
