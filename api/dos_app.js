@@ -4,9 +4,6 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-export default function handler(req, res) {
-  if (req.method === 'GET') {
-
     const cards = [
       {
         name: "Deck of Sixty",
@@ -424,9 +421,6 @@ export default function handler(req, res) {
             ]
         }
     }];
-    res.status(200).json({cards});
-  } else {
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`)
-  };
-}
+app.get('api/cards', (req, res) =>  {
+  res.json({ cards });
+});
