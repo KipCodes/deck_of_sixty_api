@@ -425,4 +425,6 @@ app.get('/api/cards', (req, res) =>  {
   res.json({ cards });
 });
 
-//attempting to resync repo
+app.listen(3000, () => {
+  console.log(`API running on http://localhost:3000`);
+})
