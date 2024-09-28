@@ -421,6 +421,6 @@ app.use(cors());
             ]
         }
     }];
-app.get('api/cards', (req, res) =>  {
+app.get('/api/cards', (req, res) =>  {
   res.json({ cards });
 });
