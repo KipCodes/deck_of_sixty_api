@@ -14,8 +14,11 @@ And of course, this deck is ever evolving based on input and feedback from my fe
 
 # Optimizations
 <ul>
-<li>Hosting API online</li>
-<li>Building a simple front-end to access API</li>
+<li><s>Hosting API online</s> <b>Now hosted and functioning!</b></li>
+<li><s>Building a simple front-end to access API</s> <b>Available locally only at present; definitely a WIP</b></li>
+  <ul>
+    <li>Add spreads unique to playerbases or based on traditional tarot readings</li>
+    <li>Create design/add styling</li>
+  </ul>
 <li>Adding visuals to cards</li>
-<li>Including spreads unique to playerbases or based on traditional tarot readings</li>
 <li>Include an interpretation summary for clarity (otherwise it's up the the user to figure out how the pieces fit)</li>
