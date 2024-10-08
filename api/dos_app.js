@@ -5,7 +5,8 @@ const app = express();
 app.use(cors());
 
 //Deck of Sixty API
-//Version 1.1
+//Version 1.2
+//Change Notes: Updated some of the meanings for the minor arcana cards
 
 const cards = [
   {
@@ -76,7 +77,7 @@ const cards = [
     "name": "Knave of Crowns",
     "represents": "How to act",
     "astral": "Lack of motivation; restlessness; disappointment",
-    "umbral": "Bide one's time; self-reflect"
+    "umbral": "Bide one's time; self-reflect; be vigilant"
   },
   {
     "suit": "Crowns",
@@ -85,8 +86,8 @@ const cards = [
     "element": "Lightning",
     "name": "Lord of Crowns",
     "represents": "Personality and behaviors",
-    "astral": "Opinionated, passionate",
-    "umbral": "Lusty, avoiding responsibility"
+    "astral": "Creation; putting in the work and effort",
+    "umbral": "Lazy, avoiding responsibility"
   },
   {
     "suit": "Crowns",
@@ -95,8 +96,8 @@ const cards = [
     "element": "Lightning",
     "name": "Lady of Crowns",
     "represents": "Personality and behaviors",
-    "astral": "Energetic, curious",
-    "umbral": "Broken promises, all talk and no action"
+    "astral": "Proud and noble; putting one's best face forward",
+    "umbral": "Broken promises, all talk and no action; ignoble behaviors or actions"
   },
   {
     "suit": "Crowns",
@@ -196,7 +197,7 @@ const cards = [
     "name": "Lady of Cups",
     "represents":"Love, kindness",
     "astral": "Positive influence, calmness, intuitive; self-care",
-    "umbral": "Insecurity, obstinant, dependant"
+    "umbral": "Insecurity, obstinant, overly dependant"
   },
   {
     "suit": "Cups",
@@ -574,16 +575,6 @@ const cards = [
     "class": "Prisoners",
     "element": "Ice",
     "name": "Knave of Irons",
-    "represents":"Ominous clouds on the horizon",
-    "astral": "Depression, fear, anxiety; overwhelmed; mental exhaustion; light at the end of a long tunnel",
-    "umbral": "The only way out is through; bear the emotions; quell inner doubts"
-  },
-  {
-    "suit": "Irons",
-    "faculty": "Contrition",
-    "class": "Prisoners",
-    "element": "Ice",
-    "name": "Lord of Irons",
     "represents":"Charisma",
     "astral": "Romantic, suave, intrepid",
     "umbral": "Unfaithful, unsophisticated, rude"
@@ -593,10 +584,20 @@ const cards = [
     "faculty": "Contrition",
     "class": "Prisoners",
     "element": "Ice",
+    "name": "Lord of Irons",
+    "represents":"Anxieties",
+    "astral": "Depression, fear, anxiety; overwhelmed; mental exhaustion; light at the end of a long tunnel",
+    "umbral": "The only way out is through; bear the emotions; quell inner doubts"
+  },
+  {
+    "suit": "Irons",
+    "faculty": "Contrition",
+    "class": "Prisoners",
+    "element": "Ice",
     "name": "Lady of Irons",
     "represents":"Expectations",
-    "astral": "Charming, compassionate, merciful",
-    "umbral": "Unrealistic, jealous"
+    "astral": "Charming, compassionate, merciful; wise, thoughtful;",
+    "umbral": "Unrealistic, jealous; cagey with sharing wisdom; condescending"
   },
   {
     "suit": "Irons",
