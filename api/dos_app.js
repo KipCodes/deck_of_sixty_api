@@ -5,8 +5,8 @@ const app = express();
 app.use(cors());
 
 //Deck of Sixty API
-//Version 1.2
-//Change Notes: Updated some of the meanings for the minor arcana cards
+//Version 2.0
+//Change Notes: Completely refactored deck contents. The following property values have been updated for all objects: suites (scales, vessels), faculty, class, name, represents, astral, umbral. The following properties have been added to some or all objects: rank, progression, role.
 
 const cards = [
   /* CROWNS (Lightning - Highborn - Domination) */
@@ -103,8 +103,7 @@ const cards = [
     "name": "Lord of Crowns: The Count",
     "role": "The Pillar",
     "progression": "Social",
-    "represents":
-    "Active Authority",
+    "represents": "Active Authority",
     "astral": "Decisive action; the firm hand that maintains peace and justice.",
     "umbral": "The Despot; a leader who rules through fear and Levinbolts."
   },
