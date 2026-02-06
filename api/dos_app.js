@@ -131,8 +131,8 @@ const cards = [
     "progression": "Divine",
     "partner_deities": ["Byregot","Rhalgr"],
     "represents": "Purification",
-    "astral": "Byregot's Touch: Sudden architectural genius; a path forward where none existed.",
-    "umbral": "Rhalgr's Wrath: The destruction of the old; the cleansing fire of a storm."
+    "astral": "Byregot's Touch: Sudden architectural genius; a path forward where none existed; inspiration to build or repair.",
+    "umbral": "Rhalgr's Wrath: The destruction of the old; the cleansing fire of a storm, making way for the new."
   },
 
   /* SWORDS (Wind - Vanguard - Cognition) */
@@ -258,7 +258,7 @@ const cards = [
     "partner_deities": ["Oschon", "Llymlaen"],
     "represents": "Destiny",
     "astral": "Oschon's Way: Finding your true path; the joy of movement and freedom.",
-    "umbral": "Llymlaen's Tide: Being pulled by fate; the hard discipline of staying the course."
+    "umbral": "Llymlaen's Tide: The relentless tide; the hard discipline of staying the course."
   },
 
   /* VESSELS (Water - Scholars - Emotion) */
@@ -383,8 +383,8 @@ const cards = [
     "progression": "Divine",
     "partner_deities": ["Thaliak", "Nymeia"],
     "represents": "Continuity",
-    "astral": "Thaliak's Stream: The river of knowledge; clarity and logical growth.",
-    "umbral": "Nymeia's Thread: The Spinner's fate; accepting things that are beyond control."
+    "astral": "Thaliak's Stream: The flow of the river of knowledge; clarity and logical growth; the active pursuit of wisdom.",
+    "umbral": "Nymeia's Thread: The Spinner's fate; accepting things that are beyond control; the passive mysterious influence of the celestial."
   },
 
   /* STAVES (Earth - Harvesters - Possession) */
@@ -508,7 +508,7 @@ const cards = [
     "partner_deities": ["Nophica", "Althyk"],
     "represents": "Foundation",
     "astral": "Nophica's Mercy: The abundance of life; physical health and growth.",
-    "umbral": "Althyk's Weight: The gravity of time; the inevitable end of all mortal cycles."
+    "umbral": "Althyk's Weight: The gravity of time; the inevitable end of all mortal cycles and the gravity of history."
   },
 
   /* IRONS (Ice - Penitent - Resolution) */
@@ -633,7 +633,7 @@ const cards = [
     "progression": "Divine",
     "partner_deities": ["Halone", "Menphina"],
     "represents": "Resolution",
-    "astral": "Halone's Fury: The heat of battle; active resolve to conquer adversity.",
+    "astral": "Halone's Fury: The heat of battle; active resolve to conquer adversity and protect.",
     "umbral": "Menphina's Love: The cold light of the moon; peace in solitude and devotion."
   },
   
@@ -759,8 +759,8 @@ const cards = [
     "progression": "Divine",
     "partner_deities": ["Azeyma", "Nald'thal"],
     "represents": "Equilibrium",
-    "astral": "Azeyma's Truth: Victory through honesty.",
-    "umbral": "Nald'thal's Judgment: The cold cost of fate."
+    "astral": "Azeyma's Truth: The warmth of truth; Victory through honesty; shining a light on deeds to bring justice.",
+    "umbral": "Nald'thal's Judgment: The cold cost of fate; the finality of the bridge to the afterworld."
   }
 ]
 
