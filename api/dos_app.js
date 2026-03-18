@@ -9,122 +9,122 @@ app.use(cors());
 //Change Notes: Completely refactored deck contents. The following property values have been updated for all objects: suites (scales, vessels), faculty, class, name, represents, astral, umbral. The following properties have been added to some or all objects: rank, progression, role.
 
 const cards = [
-  /* CROWNS (Lightning - Highborn - Domination) */
+  /* CROWNS (Lightning - Architects - Ingenuity) */
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 1,
     "name": "First Crown: The Spark",
     "progression": "Mortal",
-    "represents": "Inspiration",
-    "astral": "A sudden bolt of genius; the drive to lead or innovate.",
-    "umbral": "Erratic energy; destructive impulses that lack a target."
+    "represents": "Potential / Kinetic Energy",
+    "astral": "A sudden bolt of insight; the raw energy required to begin a massive undertaking.",
+    "umbral": "Unguided power; a bolt that causes damage because it has no circuit to follow."
   },
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 2,
     "name": "Second Crown: The Rivalry",
     "progression": "Mortal",
-    "represents": "Competition",
-    "astral": "Healthy ambition; rising to meet a peer's challenge.",
-    "umbral": "Petty jealousy; being blinded by a desire to surpass others."
+    "represents": "Ambition",
+    "astral": "A \"race to the sky\"; healthy competition that forces one to refine their own methods.",
+    "umbral": "Innovation curdled by spite; wasting energy on undermining another's foundation."
   },
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 3,
-    "name": "Third Crown: The Law",
+    "name": "Third Crown: The Foundation",
     "progression": "Mortal",
-    "represents": "Social Order",
-    "astral": "The establishment of just rules; merit-based success.",
-    "umbral": "Tyranny; using one's position to suppress the potential of others."
+    "represents": "Integrity",
+    "astral": "Building on solid ground; the establishment of proven, just rules that ensure success.",
+    "umbral": "Bureaucratic gridlock; using \"the old ways\" or rigid rules to stifle new, brilliant ideas."
   },
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 4,
-    "name": "Fourth Crown: The Manor",
+    "name": "Fourth Crown: The Monument",
     "progression": "Mortal",
-    "represents": "Status",
-    "astral": "True nobility; the security of a well-earned reputation.",
-    "umbral": "Elitism; hiding behind titles while ignoring actual duty."
+    "represents": "Legacy",
+    "astral": "A well-earned reputation; the security of knowing your work stands as a testament to your skill.",
+    "umbral": "Resting on laurels; using past successes to justify present laziness or \"gatekeeping\" the craft."
   },
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 5,
     "name": "Fifth Crown: The Strike",
     "progression": "Mortal",
-    "represents": "Sudden Fall",
-    "astral": "Necessary disruption; toppling a corrupt structure to rebuild.",
-    "umbral": "Disgrace; a public fall from power caused by hubris."
+    "represents": "Deconstruction",
+    "astral": "The \"Cleansing Storm.\" Breaking down an obsolete or corrupt idea to ensure the next one is stronger.",
+    "umbral": "Ruin; a collapse caused by arrogance or refusing to acknowledge structural flaws."
   },
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 6,
-    "name": "Sixth Crown: The Sovereignty",
+    "name": "Sixth Crown: The Masterwork",
     "progression": "Mortal",
-    "represents": "Grace",
-    "astral": "The peak of leadership; ruling with wisdom and quiet power.",
-    "umbral": "The King of Ashes; holding power over a ruined or empty life."
+    "represents": "Completion",
+    "astral": "The pinnacle of craft; a design realized in its most perfect form. It suggests a time of harmony where the vision and the reality are one.",
+    "umbral": "The \"empty shell\"; a beautiful facade with no purpose or soul. Building something impressive just for the sake of vanity, leaving the creator hollow."
   },
   { "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 7,
-    "name": "Knight of Crowns: The Page",
+    "name": "Knight of Crowns: The Apprentice",
     "role": "The Agent",
     "progression": "Social",
-    "represents": "The Initiate",
-    "astral": "Diligent study of power; learning when to act and when to wait.",
-    "umbral": "Entitled youth; seeking the rewards of rank without the effort."
+    "represents": "Apprenticeship",
+    "astral": "Diligent study of the craft; the hunger to learn from a master.",
+    "umbral": "The \"Arrogant Novice\"; believing one's raw talent replaces the need for foundational study."
   },
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 8,
-    "name": "Lord of Crowns: The Count",
+    "name": "Lord of Crowns: The Masterwright",
     "role": "The Pillar",
     "progression": "Social",
-    "represents": "Active Authority",
-    "astral": "Decisive action; the firm hand that maintains peace and justice.",
-    "umbral": "The Despot; a leader who rules through fear and Levinbolts."
+    "represents": "Directorship",
+    "astral": "Disciplined leadership; tempering like steel to ensure excellence.",
+    "umbral": "Cruelty; breaking the tools through excessive pressure or impossible standards."
   },
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 9,
-    "name": "Lady of Crowns: The Duchess",
+    "name": "Lady of Crowns: The Architect",
     "role": "The Sovereignty",
     "progression": "Social",
-    "represents": "Internal Wisdom",
-    "astral": "Refined diplomacy; the 'steel in the velvet' approach.",
-    "umbral": "The Puppeteer; manipulation behind a mask of poise."
+    "represents": "Innovation",
+    "astral": "Refined brilliance; the ability to see the \"spirit\" of a structure and how it serves the people.",
+    "umbral": "The \"Gilded Dreamer\"; losing touch with reality in favor of impossible, over-complex designs that cannot be built."
   },
   {
     "suit": "Crowns",
     "element": "Lightning",
-    "faculty": "Domination",
-    "class": "The Highborn",
+    "faculty": "Ingenuity",
+    "class": "The Architects",
     "rank": 10,
     "name": "The Spire",
     "progression": "Divine",
@@ -134,24 +134,24 @@ const cards = [
     "umbral": "Rhalgr's Wrath: The destruction of the old; the cleansing fire of a storm, making way for the new."
   },
 
-  /* SWORDS (Wind - Vanguard - Cognition) */
+  /* SWORDS (Wind - Pathfinders - Exploration) */
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 1,
     "name": "First Sword: The Breeze",
     "progression": "Mortal",
-    "represents": "Mental Spark",
+    "represents": "Initiative",
     "astral": "A fresh perspective; clarity of thought and swift decision-making.",
     "umbral": "Scattered thoughts; mental chaos; lack of direction."
   },
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 2,
     "name": "Second Sword: The Scout",
     "progression": "Mortal",
@@ -162,8 +162,8 @@ const cards = [
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 3,
     "name": "Third Sword: The Formation",
     "progression": "Mortal",
@@ -174,8 +174,8 @@ const cards = [
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 4,
     "name": "Fourth Sword: The Encampment",
     "progression": "Mortal",
@@ -186,8 +186,8 @@ const cards = [
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 5,
     "name": "Fifth Sword: The Skirmish",
     "progression": "Mortal",
@@ -198,8 +198,8 @@ const cards = [
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 6,
     "name": "Sixth Sword: The Victory",
     "progression": "Mortal",
@@ -210,8 +210,8 @@ const cards = [
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 7,
     "name": "Knight of Swords: The Ranger",
     "role": "The Agent",
@@ -223,8 +223,8 @@ const cards = [
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 8,
     "name": "Lord of Swords: The Captain",
     "role": "The Pillar",
@@ -236,8 +236,8 @@ const cards = [
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 9,
     "name": "Lady of Swords: The Strategist",
     "role": "The Sovereignty",
@@ -249,8 +249,8 @@ const cards = [
   {
     "suit": "Swords",
     "element": "Wind",
-    "faculty": "Cognition",
-    "class": "The Vanguard",
+    "faculty": "Exploration",
+    "class": "The Pathfinders",
     "rank": 10,
     "name": "The Arrow",
     "progression": "Divine",
@@ -260,11 +260,11 @@ const cards = [
     "umbral": "Llymlaen's Tide: The relentless tide; the hard discipline of staying the course."
   },
 
-  /* VESSELS (Water - Scholars - Emotion) */
+  /* VESSELS (Water - Scholars - Insight) */
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 1,
     "name": "First Vessel: The Drop",
@@ -276,7 +276,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 2,
     "name": "Second Vessel: The Confluence",
@@ -288,7 +288,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 3,
     "name": "Third Vessel: The Wellspring",
@@ -300,7 +300,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 4,
     "name": "Fourth Vessel: The Basin",
@@ -312,7 +312,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 5,
     "name": "Fifth Vessel: The Overflow",
@@ -324,7 +324,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 6,
     "name": "Sixth Vessel: The Sea",
@@ -336,7 +336,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 7,
     "name": "Knight of Vessels: The Acolyte",
@@ -349,7 +349,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 8,
     "name": "Lord of Vessels: The Archon",
@@ -362,7 +362,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 9,
     "name": "Lady of Vessels: The Oracle",
@@ -375,7 +375,7 @@ const cards = [
   {
     "suit": "Vessels",
     "element": "Water",
-    "faculty": "Emotion",
+    "faculty": "Insight",
     "class": "The Scholars",
     "rank": 10,
     "name": "The Ewer",
@@ -386,11 +386,11 @@ const cards = [
     "umbral": "Nymeia's Thread: The Spinner's fate; accepting things that are beyond control; the passive mysterious influence of the celestial."
   },
 
-  /* STAVES (Earth - Harvesters - Possession) */
+  /* STAVES (Earth - Harvesters - Stewardship) */
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 1,
     "name": "First Staff: The Seed",
@@ -402,7 +402,7 @@ const cards = [
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 2,
     "name": "Second Staff: The Sapling",
@@ -414,7 +414,7 @@ const cards = [
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 3,
     "name": "Third Staff: The Roots",
@@ -426,7 +426,7 @@ const cards = [
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 4,
     "name": "Fourth Staff: The Fence",
@@ -438,7 +438,7 @@ const cards = [
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 5,
     "name": "Fifth Staff: The Blight",
@@ -450,7 +450,7 @@ const cards = [
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 6,
     "name": "Sixth Staff: The Harvest",
@@ -462,7 +462,7 @@ const cards = [
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 7,
     "name": "Knight of Staves: The Gatherer",
@@ -475,7 +475,7 @@ const cards = [
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 8,
     "name": "Lord of Staves: The Warden",
@@ -483,10 +483,11 @@ const cards = [
     "progression": "Social",
     "represents": "The Protector",
     "astral": "Stewardship; guarding the resources for future generations.",
-    "umbral": "The Hoarder; guarding wealth so fiercely no one can use it." },
+    "umbral": "The Hoarder; guarding wealth so fiercely no one can use it."
+  },
   { "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 9,
     "name": "Lady of Staves: The Matron",
@@ -499,7 +500,7 @@ const cards = [
   {
     "suit": "Staves",
     "element": "Earth",
-    "faculty": "Possession",
+    "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 10,
     "name": "The Bole",
@@ -510,24 +511,24 @@ const cards = [
     "umbral": "Althyk's Weight: The gravity of time; the inevitable end of all mortal cycles and the gravity of history."
   },
 
-  /* IRONS (Ice - Penitent - Resolution) */
+  /* IRONS (Ice - Devout - Devotion) */
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 1,
     "name": "First Iron: The Chill",
     "progression": "Mortal",
-    "represents": "Reality Check",
-    "astral": "A harsh but necessary truth; the first step to atonement.",
+    "represents": "Sobering Truth",
+    "astral": "A harsh but necessary truth; the first step toward a vow.",
     "umbral": "Bitterness; a heart that freezes over at the first sign of pain."
   },
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 2,
     "name": "Second Iron: The Links",
     "progression": "Mortal",
@@ -538,8 +539,8 @@ const cards = [
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 3,
     "name": "Third Iron: The Wall",
     "progression": "Mortal",
@@ -550,8 +551,8 @@ const cards = [
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 4,
     "name": "Fourth Iron: The Shelter",
     "progression": "Mortal",
@@ -562,8 +563,8 @@ const cards = [
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 5,
     "name": "Fifth Iron: The Absolution",
     "progression": "Mortal",
@@ -574,8 +575,8 @@ const cards = [
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 6,
     "name": "Sixth Iron: The Summit",
     "progression": "Mortal",
@@ -586,8 +587,8 @@ const cards = [
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 7,
     "name": "Knight of Irons: The Exile",
     "role": "The Agent",
@@ -599,8 +600,8 @@ const cards = [
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 8,
     "name": "Lord of Irons: The Inquisitor",
     "role": "The Pillar",
@@ -612,8 +613,8 @@ const cards = [
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 9,
     "name": "Lady of Irons: The Saint",
     "role": "The Sovereignty",
@@ -625,23 +626,23 @@ const cards = [
   {
     "suit": "Irons",
     "element": "Ice",
-    "faculty": "Resolution",
-    "class": "The Penitent",
+    "faculty": "Devotion",
+    "class": "The Devout",
     "rank": 10,
     "name": "The Spear",
     "progression": "Divine",
     "partner_deities": ["Halone", "Menphina"],
-    "represents": "Resolution",
+    "represents": "Devotion",
     "astral": "Halone's Fury: The heat of battle; active resolve to conquer adversity and protect.",
     "umbral": "Menphina's Love: The cold light of the moon; peace in solitude and devotion."
   },
   
-  /* SCALES (Fire - Merchants - Volition) */
+  /* SCALES (Fire - High-Traders - Judgment) */
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 1,
     "name": "First Scale: The Ember",
     "progression": "Mortal",
@@ -652,8 +653,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 2,
     "name": "Second Scale: The Trade",
     "progression": "Mortal",
@@ -664,8 +665,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 3,
     "name": "Third Scale: The Quality",
     "progression": "Mortal",
@@ -676,8 +677,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 4,
     "name": "Fourth Scale: The Ledger",
     "progression": "Mortal",
@@ -688,8 +689,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 5,
     "name": "Fifth Scale: The Loss",
     "progression": "Mortal",
@@ -700,8 +701,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 6,
     "name": "Sixth Scale: The Ruby Road",
     "progression": "Mortal",
@@ -712,8 +713,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 7,
     "name": "Knight of Scales: The Peddler",
     "role": "The Agent",
@@ -725,8 +726,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 8,
     "name": "Lord of Scales: The Magnate",
     "role": "The Pillar",
@@ -738,8 +739,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 9,
     "name": "Lady of Scales: The Matriarch",
     "role": "The Sovereignty",
@@ -751,8 +752,8 @@ const cards = [
   {
     "suit": "Scales",
     "element": "Fire",
-    "faculty": "Volition",
-    "class": "The Merchants",
+    "faculty": "Judgment",
+    "class": "The High-Traders",
     "rank": 10,
     "name": "The Balance",
     "progression": "Divine",
