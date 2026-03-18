@@ -5,8 +5,8 @@ const app = express();
 app.use(cors());
 
 //Deck of Sixty API
-//Version 2.0
-//Change Notes: Completely refactored deck contents. The following property values have been updated for all objects: suites (scales, vessels), faculty, class, name, represents, astral, umbral. The following properties have been added to some or all objects: rank, progression, role.
+//Version 2.1
+//Change Notes: Further refining the cards in each suit to better represent the governing deities. Update for all suits: Faculty and Class. Suit of Crowns has seen a nearly complete refactor. Other suits to follow in subsequent updates.
 
 const cards = [
   /* CROWNS (Lightning - Architects - Ingenuity) */
