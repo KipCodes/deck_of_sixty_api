@@ -5,8 +5,8 @@ const app = express();
 app.use(cors());
 
 //Deck of Sixty API
-//Version 2.1
-//Change Notes: Further refining the cards in each suit to better represent the governing deities. Update for all suits: Faculty and Class. Suit of Crowns has seen a nearly complete refactor. Other suits to follow in subsequent updates.
+//Version 2.2
+//Change Notes: All suits have been refactored to better align with their element and partner dieties. Major updates to "represents" descriptions, "role" designations for social tier cards, and astral and umbral interpretations across all suits.
 
 const cards = [
   /* CROWNS (Lightning - Architects - Ingenuity) */
@@ -79,7 +79,7 @@ const cards = [
     "name": "Sixth Crown: The Masterwork",
     "progression": "Mortal",
     "represents": "Completion",
-    "astral": "The pinnacle of craft; a design realized in its most perfect form. It suggests a time of harmony where the vision and the reality are one.",
+    "astral": "The pinnacle of ingenuity; a design realized in its most perfect form. It suggests a time of harmony where the vision and the reality are one.",
     "umbral": "The \"empty shell\"; a beautiful facade with no purpose or soul. Building something impressive just for the sake of vanity, leaving the creator hollow."
   },
   { "suit": "Crowns",
@@ -88,7 +88,7 @@ const cards = [
     "class": "The Architects",
     "rank": 7,
     "name": "Knight of Crowns: The Apprentice",
-    "role": "The Agent",
+    "role": "The Envoy",
     "progression": "Social",
     "represents": "Apprenticeship",
     "astral": "Diligent study of the craft; the hunger to learn from a master.",
@@ -101,7 +101,7 @@ const cards = [
     "class": "The Architects",
     "rank": 8,
     "name": "Lord of Crowns: The Masterwright",
-    "role": "The Pillar",
+    "role": "The Guardian",
     "progression": "Social",
     "represents": "Directorship",
     "astral": "Disciplined leadership; tempering like steel to ensure excellence.",
@@ -113,8 +113,8 @@ const cards = [
     "faculty": "Ingenuity",
     "class": "The Architects",
     "rank": 9,
-    "name": "Lady of Crowns: The Architect",
-    "role": "The Sovereignty",
+    "name": "Lady of Crowns: The Innovator",
+    "role": "The Sovereign",
     "progression": "Social",
     "represents": "Innovation",
     "astral": "Refined brilliance; the ability to see the \"spirit\" of a structure and how it serves the people.",
@@ -144,8 +144,8 @@ const cards = [
     "name": "First Sword: The Breeze",
     "progression": "Mortal",
     "represents": "Initiative",
-    "astral": "A fresh perspective; clarity of thought and swift decision-making.",
-    "umbral": "Scattered thoughts; mental chaos; lack of direction."
+    "astral": "A sudden shift in the wind; the clarity and courage to take the first step toward the unknown.",
+    "umbral": "Scattered thoughts; mental chaos or \"chasing the wind\" without a compass or destination."
   },
   {
     "suit": "Swords",
@@ -155,9 +155,9 @@ const cards = [
     "rank": 2,
     "name": "Second Sword: The Scout",
     "progression": "Mortal",
-    "represents": "Surveillance",
+    "represents": "Observation",
     "astral": "Preparedness; gathering information before making a move.",
-    "umbral": "Indecision; being paralyzed by having too many options."
+    "umbral": "Indecision; paralysis by analysis; being so overwhelmed by the vastness of the horizon that you fail to move at all."
   },
   {
     "suit": "Swords",
@@ -165,11 +165,11 @@ const cards = [
     "faculty": "Exploration",
     "class": "The Pathfinders",
     "rank": 3,
-    "name": "Third Sword: The Formation",
+    "name": "Third Sword: The Chart",
     "progression": "Mortal",
     "represents": "Strategy",
-    "astral": "Mental discipline; organizing one's life for maximum efficiency.",
-    "umbral": "Rigidity; being unable to adapt to shifting winds."
+    "astral": "Mental discipline; mastery of one's environment through observation and data; having a clear, disciplined plan for the journey ahead.",
+    "umbral": "Rigid mapping; clinging to the \"plan\" even when the actual winds have shifted."
   },
   {
     "suit": "Swords",
@@ -177,11 +177,11 @@ const cards = [
     "faculty": "Exploration",
     "class": "The Pathfinders",
     "rank": 4,
-    "name": "Fourth Sword: The Encampment",
+    "name": "Fourth Sword: The Anchorage",
     "progression": "Mortal",
-    "represents": "Rest",
-    "astral": "Necessary mental pause; contemplation before a great effort.",
-    "umbral": "Mental stagnation; avoiding conflict through apathy."
+    "represents": "Preparation",
+    "astral": "Strategic recovery; knowing when to lower the sails to repair the ship and soul before a major crossing.",
+    "umbral": "Stagnation; avoiding conflict through apathy; fearing the open sea so much you never leave the docks."
   },
   {
     "suit": "Swords",
@@ -189,11 +189,11 @@ const cards = [
     "faculty": "Exploration",
     "class": "The Pathfinders",
     "rank": 5,
-    "name": "Fifth Sword: The Skirmish",
+    "name": "Fifth Sword: The Squall",
     "progression": "Mortal",
-    "represents": "Conflict",
-    "astral": "A clash of ideas that leads to a better truth.",
-    "umbral": "Discord; a mental or social battle where no one truly wins."
+    "represents": "Adversity",
+    "astral": "Growth through turbulence; using the \"headwinds\" of life to learn how to tack and maneuver.",
+    "umbral": "Being \"lost at sea\"; allowing a temporary crisis to blow you completely off course or lose all momentum entirely."
   },
   {
     "suit": "Swords",
@@ -201,11 +201,11 @@ const cards = [
     "faculty": "Exploration",
     "class": "The Pathfinders",
     "rank": 6,
-    "name": "Sixth Sword: The Victory",
+    "name": "Sixth Sword: The Discovery",
     "progression": "Mortal",
-    "represents": "Success",
-    "astral": "The triumph of logic and skill; achieving a long-term goal.",
-    "umbral": "Empty success; a win that leaves one isolated or hated."
+    "represents": "Achievement",
+    "astral": "The triumph of logic and skill; achieving a long-term goal; the successful conclusion of a voyage where the destination is finally reached.",
+    "umbral": "Empty success; a win that leaves one isolated or hated; reaching a destination only to realize you’ve lost the joy of the journey itself."
   },
   {
     "suit": "Swords",
@@ -214,11 +214,11 @@ const cards = [
     "class": "The Pathfinders",
     "rank": 7,
     "name": "Knight of Swords: The Ranger",
-    "role": "The Agent",
+    "role": "The Envoy",
     "progression": "Social",
     "represents": "The Scout",
     "astral": "Relentless curiosity; the one who explores the unknown first.",
-    "umbral": "Recklessness; wandering without a map or purpose."
+    "umbral": "Recklessness; wandering without a map or purpose; wandering so deep into the wilds that you lose your connection to the people you serve."
   },
   {
     "suit": "Swords",
@@ -227,11 +227,11 @@ const cards = [
     "class": "The Pathfinders",
     "rank": 8,
     "name": "Lord of Swords: The Captain",
-    "role": "The Pillar",
+    "role": "The Guardian",
     "progression": "Social",
     "represents": "Martial Command",
-    "astral": "Bravery; the courage to stand by one's convictions.",
-    "umbral": "Brutality; forcing one's will on others through mental or physical force."
+    "astral": "Bravery or decisive leadership; the courage to stand by one's convictions; the courage to steer through the storm while holding the crew together.",
+    "umbral": "Brutality; The \"Tyrant of the Tides\"; demanding total obedience while steering the ship toward personal glory."
   },
   {
     "suit": "Swords",
@@ -239,8 +239,8 @@ const cards = [
     "faculty": "Exploration",
     "class": "The Pathfinders",
     "rank": 9,
-    "name": "Lady of Swords: The Strategist",
-    "role": "The Sovereignty",
+    "name": "Lady of Swords: The Navigator",
+    "role": "The Sovereign",
     "progression": "Social",
     "represents": "Tactical Wisdom",
     "astral": "Foresight; seeing the 'long game' and guiding others toward it.",
@@ -269,9 +269,9 @@ const cards = [
     "rank": 1,
     "name": "First Vessel: The Drop",
     "progression": "Mortal",
-    "represents": "Intuition",
-    "astral": "The birth of a feeling; a true spiritual or emotional hunch.",
-    "umbral": "Emotional overwhelm; a leak of energy without a container."
+    "represents": "Curiousity",
+    "astral": "The spark of intellectual or spiritual hunger; curiousity and the cognitive potential of it.",
+    "umbral": "Emotional overwhelm; a leak of energy without a container to hold it."
   },
   {
     "suit": "Vessels",
@@ -279,11 +279,11 @@ const cards = [
     "faculty": "Insight",
     "class": "The Scholars",
     "rank": 2,
-    "name": "Second Vessel: The Confluence",
+    "name": "Second Vessel: The Thread",
     "progression": "Mortal",
-    "represents": "Empathy",
-    "astral": "Deep connection; two souls sharing a single memory.",
-    "umbral": "Projection; confusing your own feelings with those of another."
+    "represents": "Connection",
+    "astral": "Identifying the hidden links between people or events; deep connection; a moment of perfect synchronicity.",
+    "umbral": "Projection; seeing patterns that aren't there or confusing your own bias for fate."
   },
   {
     "suit": "Vessels",
@@ -293,9 +293,9 @@ const cards = [
     "rank": 3,
     "name": "Third Vessel: The Wellspring",
     "progression": "Mortal",
-    "represents": "Creativity",
-    "astral": "Abundant expression; sharing wisdom with those who thirst.",
-    "umbral": "Guardedness; hoarding knowledge or emotions out of fear."
+    "represents": "Generosity",
+    "astral": "Abundant expression; the joy of teaching and sharing wisdom with those who seek it.",
+    "umbral": "Guardedness; hoarding knowledge or emotions out of fear, selfishness, or power."
   },
   {
     "suit": "Vessels",
@@ -306,8 +306,8 @@ const cards = [
     "name": "Fourth Vessel: The Basin",
     "progression": "Mortal",
     "represents": "Meditation",
-    "astral": "The stillness of the mind; emotional clarity and peace.",
-    "umbral": "Stagnation; being caught in a loop of past regrets."
+    "astral": "The stillness of the mind; Mental and emotional clarity; the stillness required to hear the whispers of the star.",
+    "umbral": "Stagnation; being caught in a loop of past memories, unable to let the water flow."
   },
   {
     "suit": "Vessels",
@@ -317,9 +317,9 @@ const cards = [
     "rank": 5,
     "name": "Fifth Vessel: The Overflow",
     "progression": "Mortal",
-    "represents": "Release",
-    "astral": "A necessary cry; purging old grief to find a fresh flow.",
-    "umbral": "Drowning; losing oneself in an ocean of sadness or chaos."
+    "represents": "Revelation",
+    "astral": "A necessary cry; purging old grief to find a fresh flow; the emotional release that follows a long-held secret being told.",
+    "umbral": "Drowning; losing oneself in an ocean of sadness or chaos; being swept away by a sudden flood of information or grief you weren't prepared for."
   },
   {
     "suit": "Vessels",
@@ -329,9 +329,9 @@ const cards = [
     "rank": 6,
     "name": "Sixth Vessel: The Sea",
     "progression": "Mortal",
-    "represents": "Connection",
-    "astral": "Mastery over memory; the realization that all are one.",
-    "umbral": "Drifting; losing your individual purpose in the 'wider world'."
+    "represents": "Integration",
+    "astral": "Spiritual mastery; the realization that all knowledge and memory return to the same source.",
+    "umbral": "Drifting; losing your individual purpose in the \"wider world\"; losing the sense of self."
   },
   {
     "suit": "Vessels",
@@ -340,11 +340,11 @@ const cards = [
     "class": "The Scholars",
     "rank": 7,
     "name": "Knight of Vessels: The Acolyte",
-    "role": "The Agent",
+    "role": "The Envoy",
     "progression": "Social",
     "represents": "The Student",
-    "astral": "Curiosity; seeking a teacher or a new spiritual path.",
-    "umbral": "Confusion; studying too much without actually feeling the truth."
+    "astral": "The dedicated student; one who seeks a master or a new mystery to solve with humility.",
+    "umbral": "The \"Echo-Chamber\"; repeating the words of others without understanding their true meaning."
   },
   {
     "suit": "Vessels",
@@ -353,11 +353,11 @@ const cards = [
     "class": "The Scholars",
     "rank": 8,
     "name": "Lord of Vessels: The Archon",
-    "role": "The Pillar",
+    "role": "The Guardian",
     "progression": "Social",
     "represents": "Intellectual Mastery",
-    "astral": "Objective truth; the ability to explain the world's mysteries.",
-    "umbral": "Arrogance; believing that data is the same as experience."
+    "astral": "Objective authority; the ability to categorize the world's mysteries and explain them clearly.",
+    "umbral": "Intellectual Arrogance; believing that \"knowing the name of a thing\" is the same as understanding its soul."
   },
   {
     "suit": "Vessels",
@@ -366,11 +366,11 @@ const cards = [
     "class": "The Scholars",
     "rank": 9,
     "name": "Lady of Vessels: The Oracle",
-    "role": "The Sovereignty",
+    "role": "The Sovereign",
     "progression": "Social",
     "represents": "Intuitive Mastery",
-    "astral": "Enlightenment; acting as a bridge for others' understanding.",
-    "umbral": "Delusion; getting lost in your own psychic or emotional visions."
+    "astral": "Divine Insight; acting as a bridge between the mortal mind and the celestial patterns.",
+    "umbral": "Delusion; getting lost in your own visions or using \"prophecy\" to manipulate the fate of others."
   },
   {
     "suit": "Vessels",
@@ -396,8 +396,8 @@ const cards = [
     "name": "First Staff: The Seed",
     "progression": "Mortal",
     "represents": "Potential",
-    "astral": "The start of a physical goal; the raw material for a legacy.",
-    "umbral": "Waste; a resource that is ignored or left to rot."
+    "astral": "The physical start of a long-term goal; laying the groudwork for later successes; nurtuting the soil for later harvest.",
+    "umbral": "Waste; a valuable resource or talent that is left in the dark to rot instead of being planted."
   },
   {
     "suit": "Staves",
@@ -407,9 +407,9 @@ const cards = [
     "rank": 2,
     "name": "Second Staff: The Sapling",
     "progression": "Mortal",
-    "represents": "Flexibility",
-    "astral": "Adapting your foundations as you grow; resilience.",
-    "umbral": "Fragility; being easily broken by the winds of change."
+    "represents": "Resiliance",
+    "astral": "Adapting your foundations as you grow; resilience; the strength found in being flexible.",
+    "umbral": "Fragility; being easily snapped by the winds of change because you lack a support system."
   },
   {
     "suit": "Staves",
@@ -419,9 +419,9 @@ const cards = [
     "rank": 3,
     "name": "Third Staff: The Roots",
     "progression": "Mortal",
-    "represents": "Foundation",
-    "astral": "Stability; building a life that can withstand anything.",
-    "umbral": "Stubbornness; being so deeply rooted you cannot move when needed."
+    "represents": "Stability",
+    "astral": "A deep connection to history and tradition; building a life that is \"weather-proof\" because it is grounded.",
+    "umbral": "Stubbornness; being so deeply rooted in the way things were that you cannot move when the soil turns sour."
   },
   {
     "suit": "Staves",
@@ -432,7 +432,7 @@ const cards = [
     "name": "Fourth Staff: The Fence",
     "progression": "Mortal",
     "represents": "Boundaries",
-    "astral": "Protecting what is yours; healthy limits for yourself and others.",
+    "astral": "Protecting what is yours; healthy limits for yourself and others; protecting your time, energy, and resources from those who would over-harvest them.",
     "umbral": "Exclusion; building walls that prevent growth or community."
   },
   {
@@ -441,11 +441,11 @@ const cards = [
     "faculty": "Stewardship",
     "class": "The Harvesters",
     "rank": 5,
-    "name": "Fifth Staff: The Blight",
+    "name": "Fifth Staff: The Famine",
     "progression": "Mortal",
-    "represents": "Trial",
-    "astral": "Survival through scarcity; finding strength in lack.",
-    "umbral": "Decay; the physical or spiritual rot of a life or project."
+    "represents": "Endurance",
+    "astral": "Survival through scarcity; finding strength in lack; the winter wisdom of knowing how to prune what is dead to save the living.",
+    "umbral": "Decay; a spiritual or physical rot caused by neglect or refusing to address a \"parasite\" in your life."
   },
   {
     "suit": "Staves",
@@ -456,8 +456,8 @@ const cards = [
     "name": "Sixth Staff: The Harvest",
     "progression": "Mortal",
     "represents": "Abundance",
-    "astral": "The reward for labor; a legacy that feeds many.",
-    "umbral": "Exploitation; taking more from the land or people than you give."
+    "astral": "The successful completion of a cycle; a wealth of experience or resources that can be shared with others.",
+    "umbral": "Exploitation; taking more from the land or people than you give, leading to a hollow and unsustainable success."
   },
   {
     "suit": "Staves",
@@ -466,11 +466,11 @@ const cards = [
     "class": "The Harvesters",
     "rank": 7,
     "name": "Knight of Staves: The Gatherer",
-    "role": "The Agent",
+    "role": "The Envoy",
     "progression": "Social",
     "represents": "The Laborer",
-    "astral": "Hard work; the joy of simple tasks and being in nature.",
-    "umbral": "Poverty; being trapped in a cycle of endless,fruitless toil."
+    "astral": "The joy of simple, physical labor; finding spiritual peace in being of the earth and providing for the hearth.",
+    "umbral": "Toil; being trapped in a cycle of endless, back-breaking work that offers no growth or future."
   },
   {
     "suit": "Staves",
@@ -479,11 +479,11 @@ const cards = [
     "class": "The Harvesters",
     "rank": 8,
     "name": "Lord of Staves: The Warden",
-    "role": "The Pillar",
+    "role": "The Guardian",
     "progression": "Social",
     "represents": "The Protector",
-    "astral": "Stewardship; guarding the resources for future generations.",
-    "umbral": "The Hoarder; guarding wealth so fiercely no one can use it."
+    "astral": "Stewardship; guarding the resources for future generations; the firm hand that guides family or community.",
+    "umbral": "The Hoarder; guarding wealth and resources so fiercely that they become useless and stagnant."
   },
   { "suit": "Staves",
     "element": "Earth",
@@ -491,11 +491,11 @@ const cards = [
     "class": "The Harvesters",
     "rank": 9,
     "name": "Lady of Staves: The Matron",
-    "role": "The Sovereignty",
+    "role": "The Sovereign",
     "progression": "Social",
     "represents": "Natural Wisdom",
-    "astral": "Fertility and growth; the wisdom of seasons and cycles.",
-    "umbral": "Stagnation; refusing to let things die to make room for the new."
+    "astral": "Fertility and growth; the wisdom of seasons and cycles; a leader who understands the \"Seasons of the Soul\" and guides others with nurturing authority..",
+    "umbral": "The \"Choking Vine\"; a maternal or communal power that refuses to let others grow independent or move on."
   },
   {
     "suit": "Staves",
@@ -520,9 +520,9 @@ const cards = [
     "rank": 1,
     "name": "First Iron: The Chill",
     "progression": "Mortal",
-    "represents": "Sobering Truth",
-    "astral": "A harsh but necessary truth; the first step toward a vow.",
-    "umbral": "Bitterness; a heart that freezes over at the first sign of pain."
+    "represents": "Sincerity",
+    "astral": "A harsh but necessary moment of clarity; the \"frozen breath\" of truth that forces one to stop drifting and choose a path.",
+    "umbral": "Bitterness; a heart that ices over to avoid feeling pain, leading to isolation."
   },
   {
     "suit": "Irons",
@@ -530,11 +530,11 @@ const cards = [
     "faculty": "Devotion",
     "class": "The Devout",
     "rank": 2,
-    "name": "Second Iron: The Links",
+    "name": "Second Iron: The Link",
     "progression": "Mortal",
-    "represents": "Shared Burden",
-    "astral": "Finding a companion in the snow; mutual survival.",
-    "umbral": "Codependency; being shackled to another's failures."
+    "represents": "Loyalty",
+    "astral": "Finding a companion in the snow; the strength found in a companion; the hound to the hunter.",
+    "umbral": "Codependency; being shackled to another's failures; staying in a toxic or stagnant situation purely out of a misplaced sense of duty."
   },
   {
     "suit": "Irons",
@@ -542,11 +542,11 @@ const cards = [
     "faculty": "Devotion",
     "class": "The Devout",
     "rank": 3,
-    "name": "Third Iron: The Wall",
+    "name": "Third Iron: The Shield",
     "progression": "Mortal",
-    "represents": "Boundary",
-    "astral": "The shield of the Fury; setting cold,hard limits for safety.",
-    "umbral": "Isolation; becoming unreachable; an ice-locked soul."
+    "represents": "Discipline",
+    "astral": "The aegis of the Fury; setting firm, healthy boundaries to protect your focus and your sanctuary.",
+    "umbral": "Isolation; becoming unreachable; an ice-locked soul; becoming so defensive and walled-off that you can no longer receive warmth or help."
   },
   {
     "suit": "Irons",
@@ -554,11 +554,11 @@ const cards = [
     "faculty": "Devotion",
     "class": "The Devout",
     "rank": 4,
-    "name": "Fourth Iron: The Shelter",
+    "name": "Fourth Iron: The Vigil",
     "progression": "Mortal",
-    "represents": "Hibernation",
-    "astral": "Strategic retreat; waiting for the blizzard to pass.",
-    "umbral": "Burnout; collapsing in the cold because you tried to run too far."
+    "represents": "Patience",
+    "astral": "Strategic stillness; the \"Vigil of Menphina.\" Having the faith to wait for the blizzard to pass without losing hope.",
+    "umbral": "Burnout; collapsing in the snow because you refused to stop or seek shelter when the storm began."
   },
   {
     "suit": "Irons",
@@ -566,11 +566,11 @@ const cards = [
     "faculty": "Devotion",
     "class": "The Devout",
     "rank": 5,
-    "name": "Fifth Iron: The Absolution",
+    "name": "Fifth Iron: The Penance",
     "progression": "Mortal",
-    "represents": "Freedom",
-    "astral": "Breaking the chains of the past; earned forgiveness.",
-    "umbral": "The Fugitive; running from justice without actually repenting."
+    "represents": "Atonement",
+    "astral": "Breaking the chains of the past; earned forgiveness; the difficult process of burning away past mistakes to emerge purified and free.",
+    "umbral": "The Martyr-complex; wallowing in guilt or suffering needlessly to prove your worth to others."
   },
   {
     "suit": "Irons",
@@ -578,11 +578,11 @@ const cards = [
     "faculty": "Devotion",
     "class": "The Devout",
     "rank": 6,
-    "name": "Sixth Iron: The Summit",
+    "name": "Sixth Iron: The Ascent",
     "progression": "Mortal",
-    "represents": "Ascent",
-    "astral": "Absolute self-command; the view from the frozen peak.",
-    "umbral": "Frigidity; a peak that is beautiful but uninhabitable for others."
+    "represents": "Self-mastery",
+    "astral": "The peak of the mountain; reaching a state where external chaos no longer affects your inner peace.",
+    "umbral": "The Lonely Peak; achieving success at the cost of every human connection, standing high but entirely alone."
   },
   {
     "suit": "Irons",
@@ -591,11 +591,11 @@ const cards = [
     "class": "The Devout",
     "rank": 7,
     "name": "Knight of Irons: The Exile",
-    "role": "The Agent",
+    "role": "The Envoy",
     "progression": "Social",
     "represents": "The Outcast",
-    "astral": "The search for a new truth; the pilgrim's long walk.",
-    "umbral": "The Pariah; feeling shunned by all without knowing why."
+    "astral": "The search for a new truth; the pilgrim's long walk; an outcast who uses their solitude to find a deeper, more personal truth.",
+    "umbral": "The Pariah; feeling shunned by society and sinking into a cycle of self-pity or resentment."
   },
   {
     "suit": "Irons",
@@ -604,11 +604,11 @@ const cards = [
     "class": "The Devout",
     "rank": 8,
     "name": "Lord of Irons: The Inquisitor",
-    "role": "The Pillar",
+    "role": "The Guardian",
     "progression": "Social",
     "represents": "Judicial Authority",
-    "astral": "Integrity; the cold application of law for the greater good.",
-    "umbral": "Cruelty; the enjoyment of punishment over rehabilitation."
+    "astral": "Integrity; the cold, impartial application of a code to ensure the community remains safe and just.",
+    "umbral": "Cruelty; the enjoyment of punishment over rehabilitation; using the law as a weapon to punish rather than a shield to protect."
   },
   {
     "suit": "Irons",
@@ -617,11 +617,11 @@ const cards = [
     "class": "The Devout",
     "rank": 9,
     "name": "Lady of Irons: The Saint",
-    "role": "The Sovereignty",
+    "role": "The Sovereign",
     "progression": "Social",
     "represents": "Purified Wisdom",
-    "astral": "Sacrifice for a higher cause; absolute inner peace.",
-    "umbral": "Martyr-complex; suffering needlessly to make others feel guilty."
+    "astral": "Absolute Devotion; one who has sacrificed their ego to become a beacon of hope and warmth for others in the dark.",
+    "umbral": "Delusion; believing your purity makes you superior to others, leading to a dangerous spiritual narcissism."
   },
   {
     "suit": "Irons",
@@ -647,8 +647,8 @@ const cards = [
     "name": "First Scale: The Ember",
     "progression": "Mortal",
     "represents": "Drive",
-    "astral": "A sudden drive to create; the first flame.",
-    "umbral": "Burnout; aimless passion that fades quickly."
+    "astral": "A sudden drive to create or initiate; the desire to begin and the drive to see it through; the Morning Sun of a new venture.",
+    "umbral": "Aimless passion; a fire that burns hot but has no fuel, leading to early burnout."
   },
   {
     "suit": "Scales",
@@ -659,8 +659,8 @@ const cards = [
     "name": "Second Scale: The Trade",
     "progression": "Mortal",
     "represents": "Exchange",
-    "astral": "Fair dealing; adapting goals for mutual success.",
-    "umbral": "Unfair deals; greed vs necessity."
+    "astral": "Fair dealing; the wisdom to compromise and adapt for a win-win outcome.",
+    "umbral": "The \"Bad Bargain\"; greed masquerading as necessity, leading to broken trust."
   },
   {
     "suit": "Scales",
@@ -671,8 +671,8 @@ const cards = [
     "name": "Third Scale: The Quality",
     "progression": "Mortal",
     "represents": "Craft",
-    "astral": "Pride in work; earned reputation.",
-    "umbral": "Cutting corners; shoddy willpower."
+    "astral": "Earned reputation; the integrity of a masterwork that requires no defense; fair and quality interaction.",
+    "umbral": "\"Gilded Dross\"; cutting corners or using shoddy materials while hoping the light doesn't reveal the cracks."
   },
   {
     "suit": "Scales",
@@ -682,9 +682,9 @@ const cards = [
     "rank": 4,
     "name": "Fourth Scale: The Ledger",
     "progression": "Mortal",
-    "represents": "Balance Sheet",
-    "astral": "Security; knowing your worth.",
-    "umbral": "Hoarding; fear of reinvestment."
+    "represents": "Balance",
+    "astral": "Financial and spiritual security; the confidence of knowing exactly where you stand.",
+    "umbral": "Stagnant Wealth; hoarding resources out of a fear of the change, preventing new growth."
   },
   {
     "suit": "Scales",
@@ -695,8 +695,8 @@ const cards = [
     "name": "Fifth Scale: The Loss",
     "progression": "Mortal",
     "represents": "Risk",
-    "astral": "Learning through failure; tempering the soul.",
-    "umbral": "Bankruptcy of spirit; social discord."
+    "astral": "Learning through failure; tempering the soul; finding the silver lining in a failure and using it to build a stronger foundation.",
+    "umbral": "Spiritual Bankruptcy; social discord and bitterness caused by a refusal to accept a necessary loss."
   },
   {
     "suit": "Scales",
@@ -707,8 +707,8 @@ const cards = [
     "name": "Sixth Scale: The Ruby Road",
     "progression": "Mortal",
     "represents": "Wealth",
-    "astral": "Material mastery; peak influence.",
-    "umbral": "Gilded cage; obsession with status."
+    "astral": "Material mastery; peak influence; the ability to command the \"Market of Life\" with grace and wisdom.",
+    "umbral": "The Gilded Cage; becoming a slave to your own status or becoming obsessed with the Price of everything while knowing the Value of nothing."
   },
   {
     "suit": "Scales",
@@ -717,11 +717,11 @@ const cards = [
     "class": "The High-Traders",
     "rank": 7,
     "name": "Knight of Scales: The Peddler",
-    "role": "The Agent",
+    "role": "The Envoy",
     "progression": "Social",
-    "represents": "The Agent",
-    "astral": "Resourcefulness; adaptability.",
-    "umbral": "Silver-tongued lies; lack of direction."
+    "represents": "Opportunity",
+    "astral": "Resourcefulness; the thrifty traveler who can find an opportunity in any desert.",
+    "umbral": "Silver-tongued lies; the snake-oil salesman."
   },
   {
     "suit": "Scales",
@@ -730,11 +730,11 @@ const cards = [
     "class": "The High-Traders",
     "rank": 8,
     "name": "Lord of Scales: The Magnate",
-    "role": "The Pillar",
+    "role": "The Guardian",
     "progression": "Social",
     "represents": "Structural Authority",
-    "astral": "Generosity; building a better city.",
-    "umbral": "Avarice; ruthlessness."
+    "astral": "Philanthropy; using massive wealth to build the city for the benefit of all.",
+    "umbral": "Avarice; a ruthless monopoly that crushes the embers of others to stay at the top."
   },
   {
     "suit": "Scales",
@@ -743,11 +743,11 @@ const cards = [
     "class": "The High-Traders",
     "rank": 9,
     "name": "Lady of Scales: The Matriarch",
-    "role": "The Sovereignty",
+    "role": "The Sovereign",
     "progression": "Social",
     "represents": "Communal Wisdom",
-    "astral": "Nurturing; warmth of the hearth.",
-    "umbral": "Suffocating control; killing innovation."
+    "astral": "The Hearth-Fire; nurturing communal growth and guarding the wealth of the family",
+    "umbral": "The \"Smothering Flame\"; protecting the status quo so fiercely that you kill any chance for innovation."
   },
   {
     "suit": "Scales",
