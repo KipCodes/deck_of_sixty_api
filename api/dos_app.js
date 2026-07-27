@@ -5,8 +5,8 @@ const app = express();
 app.use(cors());
 
 //Deck of Sixty API
-//Version 2.2
-//Change Notes: All suits have been refactored to better align with their element and partner dieties. Major updates to "represents" descriptions, "role" designations for social tier cards, and astral and umbral interpretations across all suits.
+//Version 2.3
+//Change Notes: Updated a few of the descriptions on some of the cards to allow for better interpretation/representation of the card meaning
 
 const cards = [
   /* CROWNS (Lightning - Architects - Ingenuity) */
@@ -105,7 +105,7 @@ const cards = [
     "progression": "Social",
     "represents": "Directorship",
     "astral": "Disciplined leadership; tempering like steel to ensure excellence.",
-    "umbral": "Cruelty; breaking the tools through excessive pressure or impossible standards."
+    "umbral": "Tyranny of the design; forcing reality into an unnatural mold. Breaking the living tools beneath the crushing weight of an unyielding, unfeeling law.."
   },
   {
     "suit": "Crowns",
@@ -130,8 +130,8 @@ const cards = [
     "progression": "Divine",
     "partner_deities": ["Byregot","Rhalgr"],
     "represents": "Purification",
-    "astral": "Byregot's Touch: Sudden architectural genius; a path forward where none existed; inspiration to build or repair.",
-    "umbral": "Rhalgr's Wrath: The destruction of the old; the cleansing fire of a storm, making way for the new."
+    "astral": "Byregot's Descent. A flash of lightning that rewires the architecture of the mind; a sudden, terrifying download of absolute inspiration that demands immediate creation.",
+    "umbral": "Rhalgr's Cleansing. The breaking of the unbendable tower. A destructive grace that shatters obsolete foundations, leaving a scorched but purified earth."
   },
 
   /* SWORDS (Wind - Pathfinders - Exploration) */
@@ -205,7 +205,7 @@ const cards = [
     "progression": "Mortal",
     "represents": "Achievement",
     "astral": "The triumph of logic and skill; achieving a long-term goal; the successful conclusion of a voyage where the destination is finally reached.",
-    "umbral": "Empty success; a win that leaves one isolated or hated; reaching a destination only to realize you’ve lost the joy of the journey itself."
+    "umbral": "Empty success; a win that leaves one isolated or hated; reaching a destination only to realize you've lost the joy of the journey itself."
   },
   {
     "suit": "Swords",
@@ -243,7 +243,7 @@ const cards = [
     "role": "The Sovereign",
     "progression": "Social",
     "represents": "Tactical Wisdom",
-    "astral": "Foresight; seeing the 'long game' and guiding others toward it.",
+    "astral": "The horizontal gaze; possessing an elevated vision that sees beyond the immediate storm to trace the invisible geometry of the stars. Mapping paths through chaos.",
     "umbral": "Treachery; using brilliant intellect for selfish or harmful ends."
   },
   {
@@ -282,7 +282,7 @@ const cards = [
     "name": "Second Vessel: The Thread",
     "progression": "Mortal",
     "represents": "Connection",
-    "astral": "Identifying the hidden links between people or events; deep connection; a moment of perfect synchronicity.",
+    "astral": "The alignment of separate paths; recognizing the unseen cords that bind mind to mind or event to event. It asks the seeker to choose which threads to weave and which to sever.",
     "umbral": "Projection; seeing patterns that aren't there or confusing your own bias for fate."
   },
   {
@@ -370,7 +370,7 @@ const cards = [
     "progression": "Social",
     "represents": "Intuitive Mastery",
     "astral": "Divine Insight; acting as a bridge between the mortal mind and the celestial patterns.",
-    "umbral": "Delusion; getting lost in your own visions or using \"prophecy\" to manipulate the fate of others."
+    "umbral": "Drowning in the celestial expanse; becoming a hollow reed consumed by voices not your own. Trading the grounded present for a shifting labyrinth of unmanifested futures."
   },
   {
     "suit": "Vessels",
@@ -408,7 +408,7 @@ const cards = [
     "name": "Second Staff: The Sapling",
     "progression": "Mortal",
     "represents": "Resiliance",
-    "astral": "Adapting your foundations as you grow; resilience; the strength found in being flexible.",
+    "astral": "The tension between the deep, silent earth and the pulling wind. Strength found not in rigid defiance, but in the dual nature of holding fast while yielding to change.",
     "umbral": "Fragility; being easily snapped by the winds of change because you lack a support system."
   },
   {
@@ -494,7 +494,7 @@ const cards = [
     "role": "The Sovereign",
     "progression": "Social",
     "represents": "Natural Wisdom",
-    "astral": "Fertility and growth; the wisdom of seasons and cycles; a leader who understands the \"Seasons of the Soul\" and guides others with nurturing authority..",
+    "astral": "Fertility and growth; the wisdom of seasons and cycles; a leader who understands the \"Seasons of the Soul\" and guides others with nurturing authority.",
     "umbral": "The \"Choking Vine\"; a maternal or communal power that refuses to let others grow independent or move on."
   },
   {
@@ -607,7 +607,7 @@ const cards = [
     "role": "The Guardian",
     "progression": "Social",
     "represents": "Judicial Authority",
-    "astral": "Integrity; the cold, impartial application of a code to ensure the community remains safe and just.",
+    "astral": "The unblinking gaze of absolute law; stripping away individual bias to preserve the eternal architecture of truth. Justice that is pure, unyielding, and blind to mercy.",
     "umbral": "Cruelty; the enjoyment of punishment over rehabilitation; using the law as a weapon to punish rather than a shield to protect."
   },
   {
@@ -720,7 +720,7 @@ const cards = [
     "role": "The Envoy",
     "progression": "Social",
     "represents": "Opportunity",
-    "astral": "Resourcefulness; the thrifty traveler who can find an opportunity in any desert.",
+    "astral": "The crossing of borders; a keen eye that sees value where others see dust. Navigating the shifting sands of human desire to find hidden pathways of exchange.",
     "umbral": "Silver-tongued lies; the snake-oil salesman."
   },
   {
@@ -759,8 +759,8 @@ const cards = [
     "progression": "Divine",
     "partner_deities": ["Azeyma", "Nald'thal"],
     "represents": "Equilibrium",
-    "astral": "Azeyma's Truth: The warmth of truth; Victory through honesty; shining a light on deeds to bring justice.",
-    "umbral": "Nald'thal's Judgment: The cold cost of fate; the finality of the bridge to the afterworld."
+    "astral": "Azeyma's Noon. The blinding, uncompromising light of truth that leaves no shadow to hide in; victory attained through absolute exposure.",
+    "umbral": "Nald'thal's Ledger. The heavy closing of the gate; a final, chilling calculation of worth where all material gold is stripped away, leaving only the weight of the bare soul."
   }
 ]
 
